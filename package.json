@@ -1,0 +1,30 @@
+{
+  "name": "3d-graphics-applications-for-wma-php",
+  "version": "1.0.0",
+  "description": "A MEAN application that show a list of 3D graphics applications and movies that made with them",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NaGaaDEV/3D-graphics-applications-for-WMA-PHP.git"
+  },
+  "keywords": [
+    "3D",
+    "graphics",
+    "applications"
+  ],
+  "author": "Nega Mogassa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NaGaaDEV/3D-graphics-applications-for-WMA-PHP/issues"
+  },
+  "homepage": "https://github.com/NaGaaDEV/3D-graphics-applications-for-WMA-PHP#readme",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "mongoose": "^6.2.9"
+  }
+}
