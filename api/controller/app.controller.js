@@ -5,9 +5,8 @@ const app = mongoose.model(process.env.APP_MODEL);
 module.exports.getAll = function(req, res) {
     let count = parseInt(process.env.DEFAULT_FIND_COUNT);
     let offset = parseInt(process.env.DEFAULT_FIND_OFFSET);
-    count = parseInt(req.params.count) < 10 ? parseInt(req.params.count) : count;
-    offset = parseInt(req.params.offset) > 0 ? parseInt(req.params.offset) : offset;
-    
+    count = parseInt(req.query.count) < 10 ? parseInt(req.query.count) : count;
+    offset = parseInt(req.query.offset) > 0 ? parseInt(req.query.offset) : offset;
     const respond = function(err, result) {
         if(err) {
             res.status(500).json({message: err})
@@ -86,8 +85,8 @@ module.exports.updateOne = function(req, res) {
             response.status = 500;
             response.message = {message: err};
         } else {
-            response.status = 204;
-            response.message = {message: response.result};
+            response.status = 200;
+            response.message = {message: result};
         }
         res.status(response.status).json(response.message);
     }
@@ -117,8 +116,8 @@ module.exports.deleteOne = function(req, res) {
             response.status = 400;
             response.message = {message: process.env.MSG_APP_NOT_FOUND};
         } else {
-            response.status = 204;
-            response.message = result;
+            response.status = 200;
+            response.message = {message: process.env.MSG_APP_DELETED};
         }
         res.status(response.status).json(response.message);
     }
